@@ -1,0 +1,20 @@
+.step-two {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 16.25rem;
+  padding: 0 1rem;
+}
+
+.step-two__summary {
+  margin: 0 auto;
+}
+
+.step-two__button {
+  margin-left: auto;
+  background-color: $primary-color;
+}
+
+.step-two__button-icon {
+  color: $secondary-color;
+}

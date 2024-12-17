@@ -1,0 +1,21 @@
+.slider {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.slider__title {
+  color: $neutral-color-dark;
+  font-size: $font-size-sm;
+}
+
+.slider__range {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+
+  &-text {
+    color: $neutral-color-dark;
+    font-size: $font-size-s;
+  }
+}

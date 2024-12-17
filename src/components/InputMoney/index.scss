@@ -1,0 +1,11 @@
+.input-money {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.input-money__label {
+  color: $neutral-color-dark;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+}

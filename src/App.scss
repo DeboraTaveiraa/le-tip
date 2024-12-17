@@ -1,0 +1,19 @@
+::v-deep p {
+  margin-bottom: 0 !important;
+}
+
+.app {
+  background-color: $neutral-color-light;
+}
+
+.app__main {
+  padding: 1rem;
+}
+
+.app__content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 6rem;
+  margin-top: 3rem;
+}

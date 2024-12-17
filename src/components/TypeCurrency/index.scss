@@ -1,0 +1,27 @@
+.currency-switch {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    margin: 0 auto;
+  }
+}
+
+.currency-switch__toggle {
+  margin: 0;
+
+  ::v-deep .v-input--selection-controls__input {
+    margin: 0;
+  }
+
+  ::v-deep .v-input--switch__thumb {
+    color: $primary-color;
+  }
+}
+
+.currency-switch__label {
+  color: $primary-color;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semi-bold;
+}

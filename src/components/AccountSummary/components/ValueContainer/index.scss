@@ -1,0 +1,33 @@
+.value-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.value-container__title {
+  color: $neutral-color-dark;
+  font-size: $font-size-s;
+  font-weight: $font-weight-bold;
+}
+
+.value-container__value {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &-currency {
+    color: $secondary-color;
+    font-size: $font-size-large;
+  }
+
+  &--result {
+    color: $neutral-color-dark;
+    font-size: $font-size-large;
+  }
+
+  &--error {
+    color: $neutral-color-dark;
+    font-size: $font-size-xs;
+    font-style: italic;
+  }
+}

@@ -1,0 +1,14 @@
+.step-one {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.step-one__button {
+  margin-left: auto;
+  background-color: $primary-color;
+}
+
+.step-one__button-icon {
+  color: $secondary-color;
+}

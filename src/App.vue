@@ -1,29 +1,66 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-  </div>
+  <v-app class="app">
+    <div class="app__main">
+      <ContentHeader />
+
+      <section class="app__content">
+        <template v-if="isMobile">
+          <keep-alive>
+            <StepOne
+              v-if="step === 1"
+              @next-step="setStep"
+              :isMobile="isMobile"
+            />
+
+            <StepTwo
+              v-if="step === 2"
+              @previous-step="setStep"
+              :isMobile="isMobile"
+            />
+          </keep-alive>
+        </template>
+
+        <template v-else>
+          <StepOne :isMobile="isMobile" />
+
+          <StepTwo :isMobile="isMobile" />
+        </template>
+      </section>
+    </div>
+  </v-app>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "./components/HelloWorld.vue";
+import { Component, Mixins } from "vue-property-decorator";
+
+import ContentHeader from "@/components/ContentHeader/index.vue";
+import Slider from "@/components/Slider/index.vue";
+import TypeCurrency from "@/components/TypeCurrency/index.vue";
+import InputMoney from "@/components/InputMoney/index.vue";
+import AccountSummary from "@/components/AccountSummary/index.vue";
+import StepOne from "@/components/StepOne/index.vue";
+import StepTwo from "@/components/StepTwo/index.vue";
+
+import DeviceMixin from "./mixins/deviceMixin";
 
 @Component({
   components: {
-    HelloWorld,
+    ContentHeader,
+    Slider,
+    TypeCurrency,
+    InputMoney,
+    AccountSummary,
+    StepOne,
+    StepTwo,
   },
 })
-export default class App extends Vue {}
+export default class App extends Mixins(DeviceMixin) {
+  private step = 1;
+
+  setStep(newStep: number) {
+    this.step = newStep;
+  }
+}
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style scoped lang="scss" src="./App.scss" />
