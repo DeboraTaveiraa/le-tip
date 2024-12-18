@@ -66,6 +66,10 @@ export default class AccountSummary extends Vue {
     await this.setTotalConvertedToReal();
   }, 500);
 
+  mounted() {
+    this.getRealValueStore();
+  }
+
   get currencySelected() {
     return this.$store.getters.currencyAbbreviation;
   }
@@ -90,6 +94,10 @@ export default class AccountSummary extends Vue {
     return `${this.currencySelected}-${this.totalValueFormatted}`;
   }
 
+  get lastRealValueFormattedStore() {
+    return this.$store.getters.realValueFormatted;
+  }
+
   @Watch("accountValue", { immediate: true })
   @Watch("tipPercentage", { immediate: true })
   @Watch("currencySelected")
@@ -110,7 +118,7 @@ export default class AccountSummary extends Vue {
     );
   }
 
-  @Watch("watchCurrencyAndTotalValue", { immediate: true })
+  @Watch("watchCurrencyAndTotalValue")
   onDependencyChange() {
     this.debounceSetTotalConvertedToReal();
   }
@@ -120,7 +128,7 @@ export default class AccountSummary extends Vue {
       this.isLoadingConversion = true;
 
       if (this.totalValue === 0) {
-        this.realValueFormatted = formatCurrency(0, this.currencySelected);
+        this.realValueFormatted = this.setDefaultRealValue();
         return;
       }
 
@@ -144,6 +152,7 @@ export default class AccountSummary extends Vue {
       console.error(error);
     } finally {
       this.isLoadingConversion = false;
+      this.$store.commit("setRealValueFormatted", this.realValueFormatted);
     }
   }
 
@@ -174,6 +183,16 @@ export default class AccountSummary extends Vue {
       totalSumWithTip,
       this.currencySelected
     );
+  }
+
+  setDefaultRealValue() {
+    return formatCurrency(0, this.currencySelected);
+  }
+
+  getRealValueStore() {
+    this.realValueFormatted = this.lastRealValueFormattedStore.length
+      ? this.lastRealValueFormattedStore
+      : this.setDefaultRealValue();
   }
 }
 </script>

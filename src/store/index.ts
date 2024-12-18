@@ -10,6 +10,7 @@ export default new Vuex.Store({
     accountValue: 0,
     tipPercentage: 10,
     amountPeople: 2,
+    realValueFormatted: "",
   },
   getters: {
     currencySymbol: (state) => state.currencySymbol,
@@ -17,6 +18,7 @@ export default new Vuex.Store({
     accountValue: (state) => state.accountValue,
     tipPercentage: (state) => state.tipPercentage,
     amountPeople: (state) => state.amountPeople,
+    realValueFormatted: (state) => state.realValueFormatted,
   },
   mutations: {
     setCurrencySymbol(state, payload: string) {
@@ -33,6 +35,9 @@ export default new Vuex.Store({
     },
     setAmountPeople(state, payload: number) {
       state.amountPeople = payload;
+    },
+    setRealValueFormatted(state, payload: string) {
+      state.realValueFormatted = payload;
     },
   },
   actions: {},
