@@ -1246,12 +1246,14 @@
   "resolved" "https://registry.npmjs.org/aws4/-/aws4-1.13.2.tgz"
   "version" "1.13.2"
 
-"axios@^0.21.1":
-  "integrity" "sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg=="
-  "resolved" "https://registry.npmjs.org/axios/-/axios-0.21.4.tgz"
-  "version" "0.21.4"
+"axios@^1.7.9":
+  "integrity" "sha512-LhLcE7Hbiryz8oMDdDptSrWowmB4Bl6RCt6sIJKpRB4XtVf0iEgewX3au/pJqm+Py1kCASkb/FFKjxQaLtxJvw=="
+  "resolved" "https://registry.npmjs.org/axios/-/axios-1.7.9.tgz"
+  "version" "1.7.9"
   dependencies:
-    "follow-redirects" "^1.14.0"
+    "follow-redirects" "^1.15.6"
+    "form-data" "^4.0.0"
+    "proxy-from-env" "^1.1.0"
 
 "babel-loader@^8.2.2":
   "integrity" "sha512-nXzRChX+Z1GoE6yWavBQg6jDslyFF3SDjl2paADuoQtQW10JqShJt62R6eJQ5m/pjJFDT8xgKIWSP85OY8eXeA=="
@@ -1688,7 +1690,7 @@
   "resolved" "https://registry.npmjs.org/colorette/-/colorette-2.0.20.tgz"
   "version" "2.0.20"
 
-"combined-stream@^1.0.6", "combined-stream@~1.0.6":
+"combined-stream@^1.0.6", "combined-stream@^1.0.8", "combined-stream@~1.0.6":
   "integrity" "sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg=="
   "resolved" "https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz"
   "version" "1.0.8"
@@ -2811,7 +2813,7 @@
   "resolved" "https://registry.npmjs.org/flatted/-/flatted-3.3.2.tgz"
   "version" "3.3.2"
 
-"follow-redirects@^1.0.0", "follow-redirects@^1.14.0":
+"follow-redirects@^1.0.0", "follow-redirects@^1.15.6":
   "integrity" "sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ=="
   "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.9.tgz"
   "version" "1.15.9"
@@ -2839,6 +2841,15 @@
     "schema-utils" "2.7.0"
     "semver" "^7.3.2"
     "tapable" "^1.0.0"
+
+"form-data@^4.0.0":
+  "integrity" "sha512-tzN8e4TX8+kkxGPK8D5u0FNmjPUjw3lwC9lSLxxoB/+GtsJG91CO8bSWy73APlgAZzZbXEYZJuxjkHH2w+Ezhw=="
+  "resolved" "https://registry.npmjs.org/form-data/-/form-data-4.0.1.tgz"
+  "version" "4.0.1"
+  dependencies:
+    "asynckit" "^0.4.0"
+    "combined-stream" "^1.0.8"
+    "mime-types" "^2.1.12"
 
 "form-data@~2.3.2":
   "integrity" "sha512-1lLKB2Mu3aGP1Q/2eCOx0fNbRMe7XdwktwOruhfqqd0rIJWwN4Dh+E3hrPSlDCXnSR7UtZ1N38rVXm+6+MEhJQ=="
@@ -4179,7 +4190,7 @@
   "resolved" "https://registry.npmjs.org/node-releases/-/node-releases-2.0.19.tgz"
   "version" "2.0.19"
 
-"node-sass@^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0", "node-sass@^4.12.0":
+"node-sass@^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0":
   "integrity" "sha512-sjCuOlvGyCJS40R8BscF5vhVlQjNN069NtQ1gSxyK1u9iqvn6tf7O1R4GNowVZfiZUCRt5MmMs1xd+4V/7Yr0g=="
   "resolved" "https://registry.npmjs.org/node-sass/-/node-sass-4.14.1.tgz"
   "version" "4.14.1"
@@ -4933,6 +4944,11 @@
   dependencies:
     "forwarded" "0.2.0"
     "ipaddr.js" "1.9.1"
+
+"proxy-from-env@^1.1.0":
+  "integrity" "sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg=="
+  "resolved" "https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-1.1.0.tgz"
+  "version" "1.1.0"
 
 "pseudomap@^1.0.2":
   "integrity" "sha512-b/YwNhb8lk1Zz2+bXXpS/LK9OisiZZ1SNsSLxN1x2OXVEhW2Ckr/7mWE5vrC1ZTiJlD9g19jWszTmJsB+oEpFQ=="
